@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Randomize</title>
+    <link rel="stylesheet" href="./assets/styles/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">RANDOMIZE NUMBER</div>
+      <div class="content">
+        <div class="controls">
+          <div class="controls__input">
+            <div class="controls__inputContainer">
+              <h6 class="controls__inputContainer__label">Min.</h6>
+              <input
+                type="number"
+                name="minNumber"
+                id="minNumber"
+                class="controls__inputContainer__inputNum input"
+                value="1"
+                min="1"
+                onChange="onNumChange()"
+              />
+            </div>
+            <div class="controls__inputContainer">
+              <h6 class="controls__inputContainer__label">Max.</h6>
+              <input
+                type="number"
+                name="maxNumber"
+                class="controls__inputContainer__inputNum input"
+                id="maxNumber"
+                value="2"
+                min="2"
+                onChange="onNumChange()"
+              />
+            </div>
+            <div class="controls__inputContainer">
+              <h6 class="controls__inputContainer__label">Delay (s)</h6>
+              <input
+                type="number"
+                class="controls__inputContainer__inputNum input"
+                name="delay"
+                id="delay"
+                value="0"
+                min="0"
+                max="10"
+              />
+            </div>
+          </div>
+          <div class="controls__input">
+            <div class="controls__inputContainer">
+              <h6 class="controls__inputContainer__label">Result Color</h6>
+              <input
+                type="text"
+                name="resultColor"
+                id="resultColor"
+                class="controls__inputContainer__inputNum input"
+                value="green"
+              />
+            </div>
+            <div class="controls__inputContainer">
+              <h6 class="controls__inputContainer__label">Font Size</h6>
+              <input
+                type="text"
+                name="fontSize"
+                id="fontSize"
+                class="controls__inputContainer__inputNum input"
+                value="120"
+              />
+            </div>
+            <div class="controls__inputContainer">
+              <h6 class="controls__inputContainer__label">Hide Result</h6>
+              <select
+                name="hideResult"
+                id="hideResult"
+                class="controls__inputContainer__inputSelect input"
+                value="no"
+              >
+                <option value="yes">Yes</option>
+                <option value="no" selected>No</option>
+              </select>
+            </div>
+          </div>
+          <button
+            class="controls__btn"
+            id="startOperationBtn"
+            onClick="getRandomNumber(0, true)"
+          >
+            Get Random Number
+          </button>
+          <button
+            class="controls__btn stopOperation"
+            id="stopOperationBtn"
+            onClick="stopOperation()"
+          >
+            Stop Operation
+          </button>
+        </div>
+        <div class="result">
+          <h1 id="resultText"></h1>
+          <button
+            class="resultHideBtn"
+            onClick="showResult()"
+            id="hideResultBtn"
+          >
+            Show Result
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/scripts/main.js"></script>
+  </body>
+</html>

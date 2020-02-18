@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap");
+
+body {
+  background-color: powderblue;
+  font-family: "Sulphur Point", sans-serif;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+
+  .title {
+    width: 100%;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .controls {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .controls__input {
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        align-items: space-between;
+        justify-content: space-between;
+        .controls__inputContainer {
+          .controls__inputContainer__label {
+            font-size: 14px;
+            margin: 0;
+            padding: 2px 0px;
+          }
+          .controls__inputContainer__inputNum {
+            display: block;
+            padding: 5px;
+            height: 30px;
+          }
+          .controls__inputContainer__inputSelect {
+            height: 44px;
+            width: 100%;
+            display: block;
+            padding: 5px;
+          }
+        }
+      }
+
+      .controls__btn {
+        width: 100%;
+        height: 65px;
+        cursor: pointer;
+        &.stopOperation {
+          display: none;
+          background: rgba(255, 0, 0, 0.7);
+          color: #eee;
+          border: 0;
+          transition: all 500ms;
+          transition-property: color, background;
+          &:hover {
+            background: rgba(255, 0, 0, 0.4);
+            color: #fff;
+          }
+        }
+      }
+    }
+    .result {
+      margin: 10px;
+      text-align: center;
+
+      h1 {
+        font-size: 100px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .resultHideBtn {
+        cursor: pointer;
+        margin-top: 20px;
+        visibility: hidden;
+        width: 400px;
+        padding: 13px;
+        height: 105px;
+        border: 0;
+        background: #444;
+        font-size: 16px;
+        color: #ddd;
+        transition: all 500ms;
+        transition-property: background, color;
+        &:hover {
+          background: #222;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
