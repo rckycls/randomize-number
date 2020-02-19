@@ -83,6 +83,7 @@ function stopOperation() {
   const startOperationBtn = document.getElementById("startOperationBtn");
   stopOperationBtn.style.display = "none";
   startOperationBtn.style.display = "block";
+  document.getElementById("hideResultBtn").style.visibility = "hidden";
   resultText.innerText = "";
   clearTimeout(timedFunc);
   disableInputs(false);
