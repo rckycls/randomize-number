@@ -15,10 +15,9 @@ function getRandomNumber(i, clicked) {
   };
 
   if (clicked) {
-    disableInputs(true);
     resultText.style.color = "#444";
     resultText.style.fontSize = style.fontSize + "px";
-    document.getElementById("hideResultBtn").style.visibility = "hidden";
+    stopOperation(true);
   }
 
   if (delay && i < delay) {
@@ -35,8 +34,7 @@ function getRandomNumber(i, clicked) {
     const maxNumber = parseInt(document.getElementById("maxNumber").value);
     const hideResult = document.getElementById("hideResult").value;
 
-    disableInputs(false);
-    stopOperation();
+    stopOperation(false);
 
     if (hideResult === "yes") {
       document.getElementById("hideResultBtn").style.visibility = "visible";
@@ -79,7 +77,8 @@ function showResult() {
   document.getElementById("hideResultBtn").style.visibility = "hidden";
 }
 
-function stopOperation() {
+function stopOperation(disabledInputs) {
+  disableInputs(disabledInputs);
   const stopOperationBtn = document.getElementById("stopOperationBtn");
   const startOperationBtn = document.getElementById("startOperationBtn");
   stopOperationBtn.style.display = "none";
@@ -87,5 +86,4 @@ function stopOperation() {
   document.getElementById("hideResultBtn").style.visibility = "hidden";
   resultText.innerText = "";
   clearTimeout(timedFunc);
-  disableInputs(false);
 }
