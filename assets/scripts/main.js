@@ -18,6 +18,7 @@ function getRandomNumber(i, clicked) {
     disableInputs(true);
     resultText.style.color = "#444";
     resultText.style.fontSize = style.fontSize + "px";
+    document.getElementById("hideResultBtn").style.visibility = "hidden";
   }
 
   if (delay && i < delay) {
